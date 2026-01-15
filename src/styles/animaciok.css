@@ -1,0 +1,8 @@
+.nagyit {
+    transition: all 400ms;
+}
+
+.nagyit:hover {
+    transition: all 400ms;
+    transform: scale(1.02);
+}

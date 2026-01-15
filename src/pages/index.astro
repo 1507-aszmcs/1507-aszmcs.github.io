@@ -1,0 +1,185 @@
+---
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/gombok.css";
+import "../styles/animaciok.css";
+
+import Lablec from "../components/lablec.astro";
+
+import { getCollection } from "astro:content";
+const posztok = await getCollection("blog");
+
+// Posztok sorba rendezése és a legújabb 3 kiválasztása (a top 3 kilistázásra)
+const topHarom = posztok
+  .sort((a, b) => b.data.date - a.data.date)
+  .slice(0, 3);
+
+const datumFormalizalas = (datum) => {
+  return new Date(datum).toISOString().split('T')[0].replaceAll('-', '.')
+}
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>1507.hu</title>
+
+		
+		<link rel="canonical" href="https://1507.hu/" />
+		<meta name="description" content="Az 1507. Árpád-házi Szent Margit Cserkészcsapat hírei, eseményei, története cserkészeknek és szülőknek.">
+
+		<script src="/scripts/redirect.js" is:inline></script>
+		<script src="/scripts/gepard.js" defer is:inline ></script>
+	</head>
+
+	<body class="bg-white">
+		<!-- Navigáció -->
+		<header class="inset-x-0 top-0 z-50">
+			<nav aria-label="Global" class="flex items-center justify-between p-6 lg:p-8 lg:px-16">
+				<div class="flex lg:flex-1">
+					<a href="../" class="-m-1.5 p-1.5 flex">
+						<img src="/images/logo.jpeg" alt="Csapatlogo" class="h-8 w-auto rounded-sm" />
+						<span class="pl-4 text-2xl font-semibold justify-middle">1507.hu</span>
+					</a>
+				</div>
+				<div class="flex lg:hidden">
+					<button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+						<span class="sr-only">Menü megnyitása</span>
+						<img src="/images/menu.png" alt="" class="h-8 w-auto">
+					</button>
+				</div>
+				<div class="hidden lg:flex lg:gap-x-8">
+					<a href="../" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-white bg-[#0f1955] ">Kezdőlap</a>
+					<a href="../hirek/" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-black">Hírek</a>
+					<a href="../naptar/" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-black">Naptár</a>
+					<a href="../rolunk/" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-black">Rólunk</a>
+					<a href="../kapcsolat/" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-black">Kapcsolat</a>
+					<a href="../tamogatas/" class="py-1.5 px-2.5 rounded-xl text-lg font-semibold text-black">Támogatás</a>
+				</div>
+			</nav>
+			<!-- Telefonos NAV -->
+			<el-dialog>
+				<dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+					<div tabindex="0" class="fixed inset-0 focus:outline-none">
+						<el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-[#0f1955] p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+							<div class="flex items-center justify-between">
+								<a href="#" class="-m-1.5 p-1.5 p-1 bg-white rounded-xl">
+									<span class="sr-only">ÁSZMCS</span>
+									<img src="/images/logo.jpeg" alt="" class="h-10 w-auto rounded-xl" />
+								</a>
+								<button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+									<span class="sr-only">Menü bezárása</span>
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+									<path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+									</svg>
+								</button>
+							</div>
+							<div class="mt-6 flow-root">
+								<div class="-my-6 divide-y divide-white/10">
+									<div class="space-y-2 py-6">
+										<a href="../" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Kezdőlap</a>
+										<a href="../hirek/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Hírek</a>
+										<a href="../naptar/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Naptár</a>
+										<a href="../rolunk/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Rólunk</a>
+										<a href="../kapcsolat/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Kapcsolat</a>
+										<a href="../tamogatas/" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Támogatás</a>
+									</div>
+								</div>
+							</div>
+						</el-dialog-panel>
+					</div>
+				</dialog>
+			</el-dialog>
+			<!-- NAV VÉGE -->
+		</header>
+
+		<main class="py-4 lg:py-10">
+			<!-- Az oldal alap paddingja -->
+			<div class="px-10 lg:px-20">
+				<!-- Hero -->
+				<div>
+					<div>
+						<h2 class="text-4xl text-green-900 font-semibold uppercase">1507.</h2>
+						<hr class="w-10 mt-3 h-px">
+						<h1 class="text-3xl sm:text-5xl text-black font-bold mt-4 mb-2">Árpád-házi Szent Margit Cserkészcsapat</h1>
+						<p class="text-lg sm:text-xl text-gray-500 font-semibold">Magyarország legnagyobb vidéki csapata Szeged város szívében.</p>
+						<div class="m-10 ml-0 mt-8 sm:mt-6">
+							<a href="#hirek_id" class="elsodleges px-6! py-3!">Hírek</a>
+							<a href="../kapcsolat/" class="masodlagos px-6! py-3!">Kapcsolat</a>
+						</div>
+					</div>
+					<div class="mt-6 lg:mt-10">
+						<img src="images/csapat_foto_edited.JPG" alt="Csapatunk csoportképe" class="w-screen rounded-xl lg:rounded-3xl">
+					</div>
+				</div>
+
+				<!-- Hírek/Esenények -->
+				<div class="text-center py-0" id="hirek_id">
+					<section class="w-full py-16 w-full flex flex-col items-center justify-center">
+						<h2 class="text-5xl font-bold mb-8">Hírek</h1>
+						<ul class="w-full flex flex-col lg:flex-row justify-center items-center gap-6">
+							{topHarom.map(post => (
+								<a href={`/${post.slug}`} class="w-full md:w-3/5 lg:w-1/3 rounded-sm bg-white cursor-pointer py-2 px-1 nagyit min-h-40 border-l-8 border-[#0f1955] shadow-xl">
+									<li class="w-full flex flex-col justify-center items-start pl-4">
+										<h3 class="text-xl lg:text-2xl text-[#0f1955] font-bold mb-1 text-start">{post.data.title}</h3>
+										<p class="text-gray-600 text-md text-justify pr-4">{post.data.description}</p>
+										<p class="text-sm my-1">{datumFormalizalas(post.data.date)}</p>
+										<p class="text-[#e1642c] text-lg">Tovább →</p>
+									</li>
+								</a>
+							))}
+						</ul>
+					</section>
+				</div>
+			</div>
+
+			<!-- Rólunk + Kapcsolat -->
+			<div class="w-full flex-col lg:flex lg:flex-row py-10 lg:py-20">
+				<div id="gepi-hatter" class="hidden lg:block w-auto lg:w-1/2 h-150 lg:h-150 bg-[url('/images/csapatkep.jpg')] sm:rounded-r-xl lg:rounded-r-3xl bg-contain bg-no-repeat lg:bg-cover bg-center lg:shadow-md lg:shadow-[#0f1955]"></div>
+				<div><img id="gepik-kep" src="/images/csapatkep.jpg" alt="Kép a legjobb Őrsről" class="block lg:hidden w-auto h-auto"></div>
+				<div class="w-full lg:w-1/2 p-10 lg:p-20">
+					<h2 class="text-[#0c5522] text-4xl font-bold mt-10 text-center lg:text-left">Csapatunkról</h2>
+					<h3 class="text-2xl mt-6 mb-2 text-center lg:text-justify">Rólunk</h3>
+					<p class="text-lg text-center lg:text-justify">Ismerd meg az 1507-esek történetét, a csapat felépítését, múltját és jelenét!</p>
+					<h3 class="text-2xl mt-6 mb-2 text-center lg:text-justify">Kapcsolat</h3>
+					<p class="text-lg text-center lg:text-justify">Kérdésed van? Nem tudod kit keress? Kattints az elérhetőségekért és lépj velünk kapcsolatba!</p>
+					<div class="mt-5 flex justify-center gap-5 lg:justify-start">
+						<a href="../kapcsolat/" class="elsodleges px-6! py-3!">Kapcsolat</a>
+						<a href="../rolunk/" class="masodlagos px-6! py-3!">Rólunk</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Támogatás (Alap padding újra)-->
+			<div class="w-full px-10 lg:px-20 my-0 lg:mt-10 flex flex-col lg:flex-row justify-center">
+				<div class="w-full lg:w-2/3 xl:w-2/5 lg:p-10 self-end">
+					<h2 class="text-4xl font-semibold text-[#0c5522] mb-4 text-center lg:text-start">Támogass minket!</h2>
+					<p class="text-xl my-4 mb-4 lg:mr-5 text-center lg:text-justify">
+						Segíst a csapatnak hogy ne kelljen tagdíjat emelni, 
+						és hogy jobb, érdekesebb programokat tervezhessünk cserkészeinknek. 
+						Mindezt ingyen, minimális idő és erőbefektetéssel!
+					</p>
+					<a href="../tamogatas/" class="elsodleges hidden lg:inline-block px-6! py-3!">Kapcsolat</a>
+				</div>
+				<div class="w-full xl:w-2/5 flex flex-col flex-col-reverse md:flex-row-reverse justify-center items-center">
+					<a href="../tamogatas/" class="elsodleges lg:hidden mt-5 md:ml-5 px-6! py-3!">Bővebben</a>
+					<div>
+						<div class="w-full flex justify-center items-center ml-3">
+							<img src="/images/1szaz.jpg" alt="" class="md:h-30 lg:h-50 h-20 w-auto rounded-xl lg:rounded-3xl shadow-lg  ml-5">
+							<img src="/images/50.jpg" alt="" class="md:h-30 lg:h-50 h-20 w-auto rounded-xl lg:rounded-3xl shadow-lg  ml-5">
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+
+		<!-- Lábléc (komponens) -->
+		<Lablec />
+
+		<!-- Tailwind script -->
+		<script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+	</body>
+</html>

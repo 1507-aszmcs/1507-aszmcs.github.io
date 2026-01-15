@@ -1,0 +1,31 @@
+backend:
+  name: git-gateway
+  repo: TobiaszWolf/TobiaszWolf.github.io
+  branch: main # or your default branch
+  squash_merges: true
+  open_authoring: true
+  commit_messages:
+    create: "Létrehozva: {{hirek}} “{{slug}}”"
+    update: "Frissítve: {{hirek}} “{{slug}}”"
+    delete: "Törölve: {{hirek}} “{{slug}}”"
+
+#publish_mode: editorial_workflow <-- Lehet problémát okoz a képfeltöltésnél...
+media_folder: public/images
+public_folder: /images
+site_url: https://1507-pont-hu.netlify.app/
+
+collections:
+  - name: "hirek"
+    label: "Hírek"
+    folder: "src/content/blog"
+    create: true
+    format: frontmatter
+    preview_path: post/{{slug}}
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Author", name: "author", widget: "string" }
+      - { label: Body, name: body,  widget: markdown }
+    media_folder: /public/images/posts
+    public_folder: /images/posts

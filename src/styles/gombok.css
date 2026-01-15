@@ -1,0 +1,47 @@
+.elsodleges {
+    padding: 1.3vh 1.3vw 1.3vh 1.3vw;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    transition: all 400ms;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+.elsodleges:hover {
+    box-shadow: 1px 1px 2px black;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.masodlagos {
+    padding: 1.3vh 1.3vw 1.3vh 1.3vw;
+    /*color: #0c5522;*/
+    color: rgb(15, 25, 85);
+    background-color: white;
+    font-weight: bold;
+    transition: all 400ms;
+    border-radius: 10px;
+    /*border: 2px solid #0c5522;*/
+    border: 2px solid rgb(15, 25, 85);
+}
+
+.masodlagos:hover {
+    /*box-shadow: 2px 2px 2px #0c5522;*/
+    box-shadow: 1px 1px 2px rgb(15, 25, 85);
+    /*background-color: #0c5522cc;*/
+    background-color: rgb(15, 25, 85);
+    color: white;
+    cursor: pointer;
+}
+
+@media (max-width: 768px){
+    .elsodleges {
+        padding: 2.3vh 3.5vw;
+    }
+
+    .masodlagos {
+        padding: 2.3vh 3.5vw;
+    }
+}

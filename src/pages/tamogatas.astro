@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/gombok.css";
+
+import OldalMinta from "../layouts/sima-oldal.astro"
+---
+
+<OldalMinta oldal_cim="Támogatás" oldal_link={Astro.url.href} oldal_leiras="Támogasd csapatunkat REpont, vagy az Adó 1% segítségével.">
+    <div class="w-full flex flex-col text-center px-10 pt-0 items-center pb-0">
+        <!--<h2 class="text-5xl text-black font-bold mt-4 mb-1 pb-0">Támogasd csapatunkat!</h2>
+        <p class="mb-15 text-xl text-gray-500 font-semibold w-full lg:w-1/2 text-justify md:text-center">Támogatásod teljes összegét a csapat programjaira, illetve a weblap fenntartására használjuk fel!</p>
+         -->
+        <div class="w-full md:w-2/3 flex flex-col items-center">
+            <h3 class="text-3xl text-black font-bold mt-4 mb-1 pb-0">Miért van szükség a támogatásra?</h3>
+            <p class="w-full mb-5 text-lg text-justify">A támogatásra nagy szüksége van a csapatnak, hogy ne kelljen tagdíjat emelni, jobb, szervezettebb és érdekesebb programokat tervezhessünk, és hogy fent tarthassuk a honlapot.
+                Mindez gyakorlatilag ingyen, minimális idő és erőbefektetéssel megtehető!
+            </p>
+            <hr class="w-3/4 border-2 rounded-xl border-[#0f1955] my-5">
+        </div>
+        <div class="w-full md:w-2/3">
+            <h3 class="text-3xl text-black font-bold mt-4 mb-5 pb-0">Két módon segíthetsz!</h3>
+            <div class="w-full my-10 mt-2">
+                <h4 class="text-4xl font-semibold text-[#e1642c] mb-4">REpont</h4>
+                <p class="text-lg text-justify">Az új üveg visszaváltási rendszer bevezetése következtében, egyesületünknek - és így cserkészcsapatunknak - lehetősége nyílt ilyen formán is támogatásokat gyűjteni. 
+                    Kérjük, amennyiben tehetik szkenneljék be a QR-kódot a visszaváltás előtt, amely segítségével közvetlenül támogathatják a csapatunkat! </p>
+                <div class="mt-7 flex flex-col lg:flex-row gap-3 items-center justify-center">
+                    <a href="/images/repont_qrcode.png" download="download" class="elsodleges">QR kód letöltés</a>
+                    <a href="/images/repont_qrcode.png" class="masodlagos">QR kód megjelenítése</a>
+                </div>
+            </div>
+            <hr class="w-1/2border-2 rounded-xl border-[#0f1955] my-1">
+            <div class="w-full my-10 mb-0">
+                <h4 class="text-4xl font-semibold text-[#e1642c] mb-4">Adó 1%</h4>
+                <p class="text-lg text-justify">2025-től kezdve csapatunk támogatható teljesen ingyenes módon, az Adó 1% által. Ehhez mindössze annyit kell tenni,
+                    hogy nyilatkozunk adónk 1%-ának felhasználásáról az állam felé. Ezt két féle képpen tehetjük meg: Online (5-6 perc), vagy offline, egy nyomtatvány kitöltésével és postázásával.
+                    Az online beadás gyorsabb és egyszerűbb. Erről készítettünk is egy rövid útmutatót, melyet egy gombnyomással letölthet (pdf formátumban)! Az offline, beküldendő nyomtatványforma
+                    is egy gombnyomással letölthető (szintén PDF formátumban).
+                </p>
+                <p class="text-lg text-justify">
+                    Nagyon köszönjük, ha támogatta csapatunkat minden cserkésztestvérünk nevében!
+                </p>
+                <div class="mt-7 flex flex-col lg:flex-row gap-3 items-center justify-center">
+                    <a href="/fileok/Adó1_SzentMargit_Utmutato.pdf" class="elsodleges">Online Nyilatkozás Útmutató</a>
+                    <a href="/fileok/ado1sz_nyomtatványkép.pdf" class="masodlagos" download="download">Nyomtatvány Letöltés</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</OldalMinta>

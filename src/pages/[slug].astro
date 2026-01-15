@@ -1,0 +1,50 @@
+---
+import { getCollection } from "astro:content";
+import BlogLayout from "../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map(post => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+//Dátum magyarrá alakítása (ÉÉÉÉ.HH.NN. formátumba)
+const date = post.data.date
+const d = new Date(date);
+const formattedDate =
+  d.getFullYear() +
+  "." +
+  String(d.getMonth() + 1).padStart(2, "0") +
+  "." +
+  String(d.getDate()).padStart(2, "0");
+---
+
+<BlogLayout title={post.data.title} oldal_link={Astro.url.href} oldal_leiras={ post.data.description }>
+    <div class="w-full flex justify-center">
+        <div class="w-2/3 flex flex-col items-center justify-center">
+            <article class="prose">
+                <button id="vissza" class="my-0 hidden" onclick="window.history.back()">← Vissza</button>
+                <Content />
+                <div class="w-full flex flex-col justify-start items-start">
+                  <h3 class="text-[#0c5522] text-4xl mb-0">{post.data.title}</h1>
+                  <p class="text-xl font-semibold mb-0">{formattedDate}</p>
+                  <span class="flex items-center justify-start gap-3">
+                    <p class="text-md text-gray-500">Szerkesztő: </p>
+                    <p class="text-black font-semibold mt-0 mb-0">{post.data.author}</p>
+                  </span>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script>
+      const v = document.getElementById("vissza")
+      if (v && ((document.referrer.includes("hirek")) || (document.referrer.includes("index")))) {
+        v.classList.remove("hidden");
+      }
+    </script>
+</BlogLayout>

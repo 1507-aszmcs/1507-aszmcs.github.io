@@ -1,0 +1,64 @@
+---
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/gombok.css";
+
+import OldalMinta from "../layouts/sima-oldal.astro"
+
+import ProfilKartya from "../components/profil-kartya.astro"
+---
+
+<OldalMinta oldal_cim="Kapcsolat" oldal_link={Astro.url.href} oldal_leiras="A csapatparancsnok, a csapatparancsnok-helyettes, a korosztályok, illetve a rajok vezetőinek elérhetősége email, illetve telefonszám formájában.">
+	<div class="px-25 flex flex-col items-center justify-center w-full my-10"><!-- Az oldal alap paddingja -->       
+        <div class="w-full flex flex-col items-center">
+            <div class="text-center">
+                <h2 class="text-[#0f1955] text-3xl md:text-4xl font-bold">Csapatparancsok és Helyettes</h2>
+                <div class="flex flex-col items-center gap-10 md:flex-row mt-6 w-full ">
+                    <ProfilKartya nev="Kuna Máté" beosztas="csapatparancsnok" email="kuna.mate@cserkesz.hu" tel="+36 20 232 9709" kep_path="/profilok/Kuna.png" />
+                    <ProfilKartya nev="Várnagy Anna" beosztas="csapatparancsnok-helyettes" email="varnagy.anna@cserkesz.hu" tel="+36 70 666 1100" kep_path="/profilok/Várnagy.png" />
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-[#0f1955] text-3xl md:text-4xl font-bold mt-10 text-center">Korosztályok és Rajok</h2>
+        
+        <div class="w-full flex flex-col items-center my-10">
+            <div class="text-center">
+                <h3 class="text-[#0c5522] text-2xl font-bold">Kiscserkész Korosztály</h3>
+                <div class="flex flex-col items-center gap-8 md:flex-row mt-6 w-full ">
+                    <ProfilKartya nev="Herédi Hanna" beosztas="kiscserkész korosztályparancsnok" email="heredi.hanna@cserkesz.hu" tel="+36 30 788 0470" kep_path="/profilok/Hanna.png" />
+                    <ProfilKartya nev="Laukó Levente" beosztas="kiscserkész korosztályparancsnok" email="lauko.levente@cserkesz.hu" tel="+36 70 305 3059" kep_path="/profilok/Levi.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center my-10">
+            <div class="text-center">
+                <h3 class="text-[#0c5522] text-2xl font-bold">Cserkész Korosztály</h3>
+                <div class="flex flex-col items-center gap-8 md:flex-row mt-6 w-full ">
+                    <ProfilKartya nev="Vikor Csilla Nóra" beosztas="cserkész korosztályparancsnok" email="vikor.csilla@cserkesz.hu" tel="+36 20 407 3362" kep_path="/profilok/Csilla.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center my-10">
+            <div class="text-center">
+                <h3 class="text-[#0c5522] text-2xl font-bold">Kósza Raj</h3>
+                <div class="flex flex-col items-center gap-8 md:flex-row mt-6 w-full ">
+                    <ProfilKartya nev="Németh Botond" beosztas="kósza rajparancsnok" email="nemeth.botond@cserkesz.hu" tel="+36 30 355 5067" kep_path="/profilok/Boti.jpg" />
+                    <ProfilKartya nev="Aranyosi-Vitéz Zsófia" beosztas="kósza rajparancsnok" email="aranyosi.vitez.zsofia@cserkesz.hu" tel="+36 20 201 6647" kep_path="/profilok/Zsófi.png" />
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full flex flex-col items-center my-10">
+            <div class="text-center">
+                <h3 class="text-[#0c5522] text-2xl font-bold">Vándor Raj</h3>
+                <div class="flex flex-col items-center gap-8 md:flex-row mt-6 w-full ">
+                    <ProfilKartya nev="Kovács Gábor" beosztas="vándor rajparancsnok" email="kovgabi01@gmail.com" tel="+36 20 592 6895" kep_path="/profilok/Gábor.png" />
+                    <ProfilKartya nev="Kakas Regina" beosztas="vándor rajparancsnok" email="kakas.regina@cserkesz.hu" tel="+36 30 472 0436" kep_path="/profilok/Rézi.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+</OldalMinta>

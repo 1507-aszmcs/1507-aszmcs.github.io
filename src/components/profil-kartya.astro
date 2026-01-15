@@ -1,0 +1,17 @@
+---
+const { nev } = Astro.props
+const { beosztas } = Astro.props
+const { email } = Astro.props
+const { tel } = Astro.props
+const { kep_path } = Astro.props
+---
+
+<div class="w-full flex flex-col items-center">
+    <img src={kep_path} alt="" class="w-full md:w-2/3 rounded-xl">
+    <div class="flex flex-col items-center">
+        <h3 class="text-xl font-semibold mb-0 pt-3">{nev}</h3>
+        <p>{beosztas}</p>
+        <p class="my-1">{email}</p>
+        <p>{tel}</p>
+    </div>
+</div>

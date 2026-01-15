@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/gombok.css";
+
+import Navigacio from "../components/navigacio.astro";
+import Lablec from "../components/lablec.astro";
+const { title } = Astro.props;
+const { oldal_leiras = "" } = Astro.props;
+const { oldal_link = "" } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/images/logo.ico" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="generator" content={Astro.generator} />
+		<title>1507.hu - {title}</title>
+        <meta name="description" content={ oldal_leiras }>
+        <link rel="canonical" href={ oldal_link } />
+	</head>
+
+	<body>
+        <!-- Navigáció (komponens) -->
+        <Navigacio cim = {title}/>
+
+        <main class="py-4 lg:py-10">
+            <!-- Slot helyén jelenik meg a kontent! -->
+            <slot />
+        </main>
+
+        <!-- Lábléc (komponens) -->
+        <Lablec />
+
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+    </body>
+</html>

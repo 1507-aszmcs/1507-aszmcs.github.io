@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+import "../styles/scrollbar.css";
+import "../styles/gombok.css";
+import "../styles/animaciok.css";
+
+import OldalMinta from "../layouts/sima-oldal.astro";
+
+import { getCollection } from "astro:content";
+
+// Get all blog posts and sort by date descending
+const posts = (await getCollection("blog"))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const datumFormalizalas = (datum) => {
+  return new Date(datum).toISOString().split('T')[0].replaceAll('-', '.')
+}
+---
+
+<OldalMinta oldal_cim="Hírek" oldal_link={Astro.url.href}  oldal_leiras="Az 1507. Árpád-házi Szent Margit Cserkészcsapatról és eseményeiről hírek, beszámolók, emlékeztetők.">
+    <div class="px-10 lg:px-20 flex flex-col items-center justify-center"><!-- Az oldal alap paddingja -->
+        <section class="w-full md:w-2/3 gap-5">
+            <h2 class="text-4xl font-bold mb-6 text-center">Összes Hír</h2>
+            <div id="posts" class="flex flex-col w-full items-center">
+                {posts.map((post, index) => (
+                    <a href={`../${post.slug}`} class={`w-full lg:w-2/3 my-4 rounded-sm bg-white cursor-pointer py-2 px-1 pl-4 min-h-40 border-l-8 border-[#0f1955] shadow-xl post-card nagyit ${index >= 15 ? "hidden" : ""}`}>
+                        <article class="flex flex-col justify-center">
+                            <h3 class="text-xl lg:text-2xl text-[#0f1955] font-bold mb-1 text-start">{post.data.title}</h3>
+                            <p class="text-gray-600 text-md text-justify pr-4">{post.data.description}</p>
+                            <time class="text-sm my-1">{datumFormalizalas(post.data.date)}</time>
+                            <p class="text-[#e1642c] text-lg">Tovább →</p>
+                        </article>
+                    </a>
+                ))}
+            </div>
+
+            {posts.length > 15 && (
+                <div class="mt-12 text-center">
+                    <button id="loadMore" class="elsodleges px-6! py-3!">Több megjelenítése</button>
+                </div>
+            )}
+        </section>
+	</div>
+    
+    <script>
+        const button = document.getElementById("loadMore");
+        const posts = document.querySelectorAll(".post-card");
+
+        let visible = 15; // initially show 15 posts
+        const increment = 15; // show 15 more each click
+
+        button?.addEventListener("click", () => {
+            for (let i = visible; i < visible + increment && i < posts.length; i++) {
+            posts[i].classList.remove("hidden");
+            }
+            visible += increment;
+            if (visible >= posts.length) {
+                button.remove();
+            }
+        });
+    </script>
+</OldalMinta>

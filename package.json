@@ -1,0 +1,22 @@
+{
+  "name": "aszmcs-hu",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/netlify": "^6.5.13",
+    "@tailwindcss/vite": "^4.1.18",
+    "astro": "^5.14.8",
+    "decap-cms-app": "^3.9.0",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.19"
+  }
+}
