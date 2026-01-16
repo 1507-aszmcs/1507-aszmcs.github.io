@@ -39,15 +39,6 @@ const { oldal_link = "" } = Astro.props;
 		<meta name="twitter:title" content={title}>
 		<meta name="twitter:description" content="Az 1507. Árpád-házi Szent Margit Cserkészcsapat Hírei">
 		<meta name="twitter:image" content="https://1507.cserkesz.hu/images/logo.jpeg">
-
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q85JH95JM0"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'G-Q85JH95JM0');
-		</script>
 	</head>
 
 	<body>
@@ -62,6 +53,10 @@ const { oldal_link = "" } = Astro.props;
         <!-- Lábléc (komponens) -->
         <Lablec />
 
+		<!-- Tailwind script -->
         <script src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1" type="module"></script>
+
+		<!-- GoatCounter (Analytics script) -->
+		<script data-goatcounter="https://aszmcs-web.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     </body>
 </html>
