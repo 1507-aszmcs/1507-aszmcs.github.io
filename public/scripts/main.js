@@ -8,8 +8,8 @@ const loginBtn = document.getElementById("btn-siwg");
 const loginSIWG = async () => {
     account.createOAuth2Session(
         OAuthProvider.Google,
-        "http://1507.cserkesz.hu",
-        "http://1507.cserkesz.hu/error"
+        "https://1507.cserkesz.hu",
+        "https://1507.cserkesz.hu/404"
     );
 };
 
