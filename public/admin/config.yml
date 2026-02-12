@@ -4,12 +4,13 @@ backend:
   branch: main # or your default branch
   squash_merges: true
   open_authoring: true
+  publish_mode: editorial_workflow
   commit_messages:
     create: "Létrehozva: {{hirek}} “{{slug}}”"
     update: "Frissítve: {{hirek}} “{{slug}}”"
     delete: "Törölve: {{hirek}} “{{slug}}”"
 
-publish_mode: editorial_workflow #<-- Lehet problémát okoz a képfeltöltésnél...
+publish_mode: editorial_workflow
 media_folder: public/images
 public_folder: /images
 site_url: https://1507-pont-hu.netlify.app/
