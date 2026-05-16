@@ -11,9 +11,9 @@ Sok sikert a fejlesztéshez! Ha kérdésed van, itt megtalálsz: farkas.tobias@c
 
 JM!
 
-Farkas Tóbiás, a dicső Gepárd és Puma Őrsök büszke tagja.
+Farkas Tóbiás
 
-## 🚀 Oldal felépítés
+## Oldal felépítés
 
 A projekt fileok közt megtalálod ezt a file struktúrát találod:
 
@@ -36,10 +36,6 @@ A projekt fileok közt megtalálod ezt a file struktúrát találod:
 └── tsconfig.json
 ```
 
-Az astro a `.astro` és a `.md` fájlokat használja fel a `src/pages/` mappából. Minden oldalnak ebbe a mappába kell kerülnie! A híreket kivéve. Azok automatikusan a `src/content/blog/` mappába kerülnek feltöltésre a
-DecapCMS által. Ha manuálisan akarunk hírt hozzáadni, akkor azt is ide kell feltölteni és push-olni a github main branch-re. 
-Minden oldal a fájlneve alapján keletkezik az url "útvonal" is.
-
 A `src/components/` mappában vannak az oldal "elemei" (pl lábléc, navigáció). Ezek ismétlődő elemek, amik a legtöbb oldalon megtalálhatóak. Ha itt módosítod az egyiket, akkor minden oldalon módosulni fog.
 Ez alól kivételt képez a főoldal NAVigációja! Azt külön kell módosítani (mert más a felépoítése, mint a többi oldalnak!)
 
@@ -47,6 +43,24 @@ A `src/layouts/` mappa tartalmazza a layout-okat. Célja, hogy egy oldalt ne kel
 A hírek pl. a BlogLayout.astro-t veszik alapul. Az összes új, a DecapCMS által összerakott "blog" ez alapján fog felépülni. 
 
 A `public/` mappában kell tárolni az oldal összes képét. A DecapCMS már alapértelmezetten ide töltö fel.
+
+Az astro framework a `.astro` és a `.md` fájlokat használja fel a `src/pages/` mappából. 
+Minden oldalnak/aloldalnak ebbe a mappába kell kerülnie, a híreket kivéve. 
+Azok a `src/content/blog/` mappába kell hogy kerüljenek feltöltésre (A DecapCMS sajnos még nem lett / nem jól lett beüzemelve, úgyhogy manuálisan kell a .md fájlokat bemásolni!)
+Ha manuálisan akarunk hírt hozzáadni, akkor azt legegyszerűbben a Github "Codespace"-en keresztül tehetjük meg (akár tablet eszközről is). 
+Csak be kell másolni/meg kell íríni a `.md` filet az említett blog mappába. 
+
+## Egy blog feltöltés menete
+1. Github Codspace megnyitása (türelem, kell idő, mire betölt)
+2. Blog file bemásolása a `src/content/blog/` mappába majd szerkesztése (nem lehet két egyforma nevű file/blog!)
+3. A honlapra kirakás (terminálba beírandó parancsok sorrendben):
+    - git add src/content/blog/AZ_ÚJ_FILE_NEVE.md
+    - git config --local user.name "*TELJES NEVED*"
+    - git config --local user.email "*EMAILCÍMED*"
+    - git commit -m "Új poszt: Példa *Poszt Címe*"
+    - git push
+
+Minden oldal a fájlneve alapján keletkezik az url!
 
 ## 🧞 Fejlesztői Parancsok
 
