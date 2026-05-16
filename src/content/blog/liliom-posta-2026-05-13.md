@@ -18,7 +18,7 @@ Az idei csapattábor 11 napját tavalyhoz hasonlóan, egy gyönyörű erdő szé
 **Utazás**
 Indulás:
 - Előtáborozóknak: 2026. **július 2-án** reggel, a szegedi vasútállomásról
-- 2026. **július 6-án** reggel, a szegedi vasútállomásról
+- Többieknek: 2026. **július 6-án** reggel, a szegedi vasútállomásról
 
 Érkezés:
 - 2026. **július 16-án** várhatóan este a szegedi vasútállomásra
