@@ -23,6 +23,7 @@ pnpm-debug.log*
 
 # Jetbrains Beállítások Mappa
 .idea/
+.vscode
 
 # Helyi Netlify Mappa
 .netlify
