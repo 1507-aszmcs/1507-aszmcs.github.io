@@ -34,7 +34,7 @@ Idén is szeretnénk kedvezményt nyújtani a testvérek számára, így a máso
 
 **A tábori jelentkezés menete:**
 - Jelentkezési form kitöltése **május 31.-ig!** <a href="https://forms.gle/pGbuzU18VA1omqRE9">https://forms.gle/pGbuzU18VA1omqRE9</a>
-- A tábor díj előlegének (20.000 Ft) befizetése május 25-ig, a visszaigazoló e-mailben leírtak szerint.
+- A **tábor díj előleg**ének (20.000 Ft) befizetése **május 31-ig**, a visszaigazoló e-mailben leírtak szerint.
 
 Ha valaki nem az egész táborra jön, azt a jelentkezési formban tudja jelezni. Ha valakinél ez az eshetőség áll fenn, kérem **NE** fizessen előleget, a pénzügyesünk meg fogja keresni a tábordíj részleteivel. Ebben az esetben az utazást mindenki magának kell hogy megoldja!
 
