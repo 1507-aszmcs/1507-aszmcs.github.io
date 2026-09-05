@@ -9,56 +9,50 @@ import ProfilKartya from "../components/profil-kartya.astro"
 ---
 
 <OldalMinta oldal_cim="Kapcsolat" oldal_link={Astro.url.href} oldal_leiras="A csapatparancsnok, a csapatparancsnok-helyettes, a korosztályok, illetve a rajok vezetőinek elérhetősége email, illetve telefonszám formájában.">
-	<div class="px-6 md:px-25 flex flex-col items-center justify-center w-full my-10"><!-- Az oldal alap paddingja -->       
-        <div class="w-full flex flex-col items-center mb-10">
-            <div class="text-center w-full">
-                <h2 class="text-[#0f1955] text-2xl md:text-4xl font-bold text-center break-words uppercase">Csapatparancsnok és Helyettes</h2>
-                <div class="flex flex-col items-center gap-8 md:flex-row mt-8 w-full max-w-sm md:max-w-3xl mx-auto">
-                    <ProfilKartya nev="Kuna Máté" beosztas="csapatparancsnok" email="kuna.mate@cserkesz.hu" tel="+36 20 232 9709" kep_path="/profilok/Kuna.png" />
-                    <ProfilKartya nev="Várnagy Anna" beosztas="csapatparancsnok-helyettes" email="varnagy.anna@cserkesz.hu" tel="+36 70 666 1100" kep_path="/profilok/Várnagy.png" />
-                </div>
+	<div class="px-6 md:px-20 flex flex-col items-center w-full my-10 lg:my-16"><!-- Az oldal alap paddingja -->
+        <section class="w-full flex flex-col items-center">
+            <h2 class="text-[#0f1955] text-xl md:text-2xl font-bold uppercase tracking-wide text-center">Csapatparancsnok és Helyettes</h2>
+            <div class="flex flex-wrap justify-center gap-6 mt-6">
+                <ProfilKartya nev="Kuna Máté" beosztas="csapatparancsnok" email="kuna.mate@cserkesz.hu" tel="+36 20 232 9709" kep_path="/profilok/Kuna.png" />
+                <ProfilKartya nev="Várnagy Anna" beosztas="csapatparancsnok-helyettes" email="varnagy.anna@cserkesz.hu" tel="+36 70 666 1100" kep_path="/profilok/Várnagy.png" />
             </div>
-        </div>
+        </section>
 
-        <h2 class="text-[#0f1955] text-2xl md:text-4xl font-bold mt-10 text-center uppercase ">Korosztályok és Rajok</h2>
-        
-        <div class="w-full flex flex-col items-center mt-10">
-            <div class="text-center w-full">
-                <h3 class="text-[#0c5522] text-2xl md:text-3xl lg:text-4xl font-bold">Kiscserkész Korosztály</h3>
-                <div class="flex flex-col items-center gap-8 md:flex-row mt-2 md:mt-6 w-full max-w-sm md:max-w-3xl mx-auto">
+        <hr class="w-full max-w-md border-t border-gray-200 my-14">
+
+        <h2 class="text-[#0f1955] text-2xl md:text-3xl font-bold text-center uppercase mb-10">Korosztályok és Rajok</h2>
+
+        <div class="w-full flex flex-col gap-14">
+            <section class="w-full flex flex-col items-center">
+                <h3 class="text-[#0c5522] text-xl md:text-2xl font-bold text-center">Kiscserkész Korosztály</h3>
+                <div class="flex flex-wrap justify-center gap-6 mt-6">
                     <ProfilKartya nev="Herédi Hanna" beosztas="kiscserkész korosztályparancsnok" email="heredi.hanna@cserkesz.hu" tel="+36 30 788 0470" kep_path="/profilok/Hanna.png" />
                     <ProfilKartya nev="Laukó Levente" beosztas="kiscserkész korosztályparancsnok" email="lauko.levente@cserkesz.hu" tel="+36 70 305 3059" kep_path="/profilok/Levi.png" />
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="w-full flex flex-col items-center mt-10">
-            <div class="text-center w-full">
-                <h3 class="text-[#0c5522] text-2xl md:text-3xl lg:text-4xl font-bold">Cserkész Korosztály</h3>
-                <div class="flex flex-col items-center gap-8 md:flex-row mt-2 md:mt-6 w-full max-w-sm mx-auto">
+            <section class="w-full flex flex-col items-center">
+                <h3 class="text-[#0c5522] text-xl md:text-2xl font-bold text-center">Cserkész Korosztály</h3>
+                <div class="flex flex-wrap justify-center gap-6 mt-6">
                     <ProfilKartya nev="Vikor Csilla Nóra" beosztas="cserkész korosztályparancsnok" email="vikor.csilla@cserkesz.hu" tel="+36 20 407 3362" kep_path="/profilok/Csilla.png" />
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="w-full flex flex-col items-center mt-10">
-            <div class="text-center w-full">
-                <h3 class="text-[#0c5522] text-2xl md:text-3xl lg:text-4xl font-bold">Kósza Raj</h3>
-                <div class="flex flex-col items-center gap-8 md:flex-row mt-2 md:mt-6 w-full max-w-sm md:max-w-3xl mx-auto">
+            <section class="w-full flex flex-col items-center">
+                <h3 class="text-[#0c5522] text-xl md:text-2xl font-bold text-center">Kósza Raj</h3>
+                <div class="flex flex-wrap justify-center gap-6 mt-6">
                     <ProfilKartya nev="Németh Botond" beosztas="kósza rajparancsnok" email="nemeth.botond@cserkesz.hu" tel="+36 30 355 5067" kep_path="/profilok/Boti.png" />
                     <ProfilKartya nev="Aranyosi-Vitéz Zsófia" beosztas="kósza rajparancsnok" email="aranyosi.vitez.zsofia@cserkesz.hu" tel="+36 20 201 6647" kep_path="/profilok/Zsófi.png" />
                 </div>
-            </div>
-        </div>
+            </section>
 
-        <div class="w-full flex flex-col items-center mt-10">
-            <div class="text-center w-full">
-                <h3 class="text-[#0c5522] text-2xl md:text-3xl lg:text-4xl font-bold">Vándor Raj</h3>
-                <div class="flex flex-col items-center gap-8 md:flex-row mt-2 md:mt-6 w-full max-w-sm md:max-w-3xl mx-auto">
+            <section class="w-full flex flex-col items-center">
+                <h3 class="text-[#0c5522] text-xl md:text-2xl font-bold text-center">Vándor Raj</h3>
+                <div class="flex flex-wrap justify-center gap-6 mt-6">
                     <ProfilKartya nev="Kovács Gábor" beosztas="vándor rajparancsnok" email="kovgabi01@gmail.com" tel="+36 20 592 6895" kep_path="/profilok/Gábor.png" />
                     <ProfilKartya nev="Kakas Regina" beosztas="vándor rajparancsnok" email="kakas.regina@cserkesz.hu" tel="+36 30 472 0436" kep_path="/profilok/Rézi.png" />
                 </div>
-            </div>
+            </section>
         </div>
     </div>
 </OldalMinta>
