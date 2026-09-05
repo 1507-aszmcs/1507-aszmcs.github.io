@@ -7,33 +7,61 @@ import OldalMinta from "../layouts/sima-oldal.astro"
 ---
 
 <OldalMinta oldal_cim="SZMCSWEB" oldal_link={Astro.url.href} oldal_leiras="A cserkészcsapat kis webes felülete">
-    <div class="px-10 lg:px-20 flex items-center justify-center">
-        <div class="flex flex-col content-center justify-center">
-            <div class="flex flex-col gap-2 px-10 mx-5 lg:mx-20 text-justify">
-                <h2 class="self-center text-3xl font-semibold">Tájékoztató</h2>
-                <p class="">
-                    Kedves Cserkésztestvérek! Ezen oldalon tudjátok elérni a csapatunk online segédeszközeit, valamint az új online <strong>parancstáblát</strong> is.
-                    Ha kérdésetek van, nyugodtan keressetek meg <a href="mailto:farkas.tobias@cserkesz.hu" class="italic underline">emailben</a>.
-                </p>
-                <p>
-                    Ha készítettél bejegyzést/blogot a weboldalra, szintén írj rám emailben, illetve messengeren is! Az emailbe mindenképpen írd bele a neved, ecset azonotsítódat
-                     és az őrsöd nevét! 
-                </p>
-                <p>JM!<br>Farkas Tóbiás</p>
+    <div class="px-6 md:px-10 lg:px-20 flex flex-col items-center w-full my-1 lg:my-16">
+        <div class="flex flex-col items-center text-center mb-10">
+            <span class="text-[#e1642c] font-semibold uppercase tracking-widest text-sm">1507</span>
+            <h1 class="text-3xl sm:text-4xl font-bold text-[#0f1955] mt-2">SZMCSWEB</h1>
+        </div>
 
-            </div>
-            <hr class="w-4/5 border-2 rounded-xl border-[#0f1955] my-5 self-center">
-            <div class="mt-3 pl-10 pr-10 pb-5 ml-10 mr-10 md:ml-0 md:mr-0 flex flex-col md:flex-row gap-3 justify-center items-center">
-                <h2 class="self-center text-xl font-semibold">ŐV</h2>
-                <a href="/fileok/poszt_creator.html" class="elsodleges px-6! py-3! text-center max-w-sm" target="_blank">Posztkészítő</a>
-                <a href="https://docs.google.com/document/d/e/2PACX-1vQ8kNKhMdzAWDk_xa90xfyP01b-J08_71bxNH8N-utoDYq_PkeVRV9GmW24GKwdNp6hrSxYD0uSw2SP/pub" class="masodlagos max-w-sm px-6! py-3! text-center" target="_blank">Parancstábla</a>
-            </div>
-            <hr class="w-1/2 border-1 rounded-xl border-[#0f1955] my-1 self-center">
-            <div class="mt-3 pl-10 pr-10 ml-10 mr-10 md:ml-0 md:mr-0 flex flex-col md:flex-row gap-3 justify-center items-center">
-                <h2 class="self-center text-xl font-semibold">OP</h2>
-                <a href="https://desktop-159g1ln.taild90296.ts.net" target="_blank" class="elsodleges text-center px-6! py-3! max-w-sm">Raktár</a>
-            </div>
+        <div class="w-full max-w-2xl rounded-2xl border-l-4 border-[#0f1955] bg-gray-50 p-6 mb-14">
+            <h2 class="text-lg font-bold text-[#0f1955] mb-3">Tájékoztató</h2>
+            <p class="text-justify text-gray-700 mb-3">
+                Kedves Cserkésztestvérek! Ezen oldalon tudjátok elérni a csapatunk online segédeszközeit, valamint az új online <strong>parancstáblát</strong> is.
+                Ha kérdésetek van, nyugodtan keressetek meg <a href="mailto:farkas.tobias@cserkesz.hu" class="italic underline hover:text-[#e1642c] transition-colors">emailben</a>.
+            </p>
+            <p class="text-justify text-gray-700 mb-4">
+                Ha készítettél bejegyzést/blogot a weboldalra, szintén írj rám emailben, illetve messengeren is! Az emailbe mindenképpen írd bele a neved, ecset azonotsítódat
+                és az őrsöd nevét!
+            </p>
+            <p class="text-sm text-gray-500 italic">JM!<br>Farkas Tóbiás</p>
+        </div>
+
+        <div class="w-full max-w-4xl flex flex-col gap-14">
+            <section class="w-full flex flex-col items-center">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-[#0c5522] mb-6">ŐV</h2>
+                <div class="w-full flex flex-wrap justify-center gap-6">
+                    <a href="/fileok/poszt_creator.html" target="_blank" class="group flex flex-col justify-between w-full sm:w-64 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+                        <div class="h-1.5 w-10 rounded-full bg-[#0f1955] group-hover:bg-[#e1642c] transition-colors duration-300 mb-4"></div>
+                        <h3 class="text-lg font-bold text-[#0f1955] mb-1">Posztkészítő</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-1 mt-3">
+                            Megnyitás
+                            <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </p>
+                    </a>
+                    <a href="https://docs.google.com/document/d/e/2PACX-1vQ8kNKhMdzAWDk_xa90xfyP01b-J08_71bxNH8N-utoDYq_PkeVRV9GmW24GKwdNp6hrSxYD0uSw2SP/pub" target="_blank" class="group flex flex-col justify-between w-full sm:w-64 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+                        <div class="h-1.5 w-10 rounded-full bg-[#0f1955] group-hover:bg-[#e1642c] transition-colors duration-300 mb-4"></div>
+                        <h3 class="text-lg font-bold text-[#0f1955] mb-1">Parancstábla</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-1 mt-3">
+                            Megnyitás
+                            <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </p>
+                    </a>
+                </div>
+            </section>
+
+            <section class="w-full flex flex-col items-center">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-[#0c5522] mb-6">OP</h2>
+                <div class="w-full flex flex-wrap justify-center gap-6">
+                    <a href="https://desktop-159g1ln.taild90296.ts.net" target="_blank" class="group flex flex-col justify-between w-full sm:w-64 rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 p-6">
+                        <div class="h-1.5 w-10 rounded-full bg-[#0f1955] group-hover:bg-[#e1642c] transition-colors duration-300 mb-4"></div>
+                        <h3 class="text-lg font-bold text-[#0f1955] mb-1">Raktár</h3>
+                        <p class="text-sm text-gray-500 flex items-center gap-1 mt-3">
+                            Megnyitás
+                            <span class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+                        </p>
+                    </a>
+                </div>
+            </section>
         </div>
     </div>
 </OldalMinta>
-

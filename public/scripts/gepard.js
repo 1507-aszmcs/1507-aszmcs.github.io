@@ -4,7 +4,7 @@ const hatter = document.getElementById("gepi-hatter")
 
 let klikkSzamlalo = 0;
 
-gomb.addEventListener("click", () => {
+gomb?.addEventListener("click", () => {
     klikkSzamlalo++;
 
     if (klikkSzamlalo === 10) {
@@ -14,6 +14,11 @@ gomb.addEventListener("click", () => {
 });
 
 function easterEgg(){
-    kep.src = "/images/ors.jpg"
-    hatter.style.backgroundImage = "url('/images/ors.jpg')";
+    // A kép csere csak a főoldalon létező elemeken fut le
+    if (kep) kep.src = "/images/ors.jpg"
+    if (hatter) hatter.style.backgroundImage = "url('/images/ors.jpg')";
+
+    const vezetoknekSection = document.getElementById("vezetoknek-section");
+    vezetoknekSection?.classList.remove("hidden");
+    vezetoknekSection?.classList.add("flex");
 }
