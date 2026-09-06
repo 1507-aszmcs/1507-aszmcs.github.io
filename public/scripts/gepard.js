@@ -21,4 +21,11 @@ function easterEgg(){
     const vezetoknekSection = document.getElementById("vezetoknek-section");
     vezetoknekSection?.classList.remove("hidden");
     vezetoknekSection?.classList.add("flex");
+
+    const extFooter = document.getElementById("extendedFooter");
+    if (extFooter?.classList.contains("hidden")) {
+        const szmcswebResponsiveLink = document.getElementById("respGepiMode");
+        szmcswebResponsiveLink?.classList.remove("hidden");
+        szmcswebResponsiveLink?.classList.add("flex");
+    };
 }
