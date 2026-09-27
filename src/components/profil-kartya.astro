@@ -12,6 +12,6 @@ const { kep_path } = Astro.props
         <h3 class="text-lg font-bold text-[#0f1955]">{nev}</h3>
         <p class="text-xs font-semibold uppercase tracking-wide text-[#0c5522]">{beosztas}</p>
         <a href={`mailto:${email}`} class="text-sm text-gray-600 hover:text-[#e1642c] transition-colors mt-2 break-all">{email}</a>
-        <p class="text-sm text-gray-600">{tel}</p>
+        {tel && <p class="text-sm text-gray-600">{tel}</p>}
     </div>
 </div>
