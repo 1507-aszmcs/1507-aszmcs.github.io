@@ -11,9 +11,9 @@ Sok sikert a fejlesztéshez! Ha kérdésed van, itt megtalálsz: farkas.tobias@c
 
 JM!
 
-Farkas Tóbiás
+Farkas Tóbiás Őrsvezető, tiszteletbeli OP tag
 
-## Oldal felépítés
+## Az oldal felépítése
 
 A projekt fileok közt megtalálod ezt a file struktúrát találod:
 
